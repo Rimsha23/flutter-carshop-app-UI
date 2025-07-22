@@ -11,20 +11,25 @@ class Orderplaced extends StatefulWidget {
 class _OrderplacedState extends State<Orderplaced> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        width: 375,
-        height: 800,
+        width: screenWidth,
+        height: screenHeight,
         color: Color(0xFFF8F8F8),
         child: Center(
           child: Container(
             height: 335,
-            padding: EdgeInsets.only(left: 50, right: 50),
+            padding: EdgeInsets.only(
+              left: screenWidth * 50 / screenWidth,
+              right: screenWidth * 50 / screenWidth,
+            ),
             child: Column(
               children: [
                 Container(
-                  width: 77,
-                  height: 77,
+                  width: screenWidth * 77 / screenWidth,
+                  height: screenHeight * 77 / screenHeight,
                   decoration: BoxDecoration(shape: BoxShape.circle),
                   child: Image.asset('assets/interface@3x.png'),
                 ),

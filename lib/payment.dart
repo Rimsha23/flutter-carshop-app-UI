@@ -14,18 +14,21 @@ class Payment extends StatefulWidget {
 class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
-        width: 375,
-        height: 800,
-        padding: EdgeInsets.all(20),
+        width: screenWidth * (screenWidth / screenWidth),
+        height: screenHeight * (screenHeight / screenHeight),
+        padding: EdgeInsets.all(screenWidth * (20 / screenWidth)),
         color: Color(0xFFF8F8F8),
         child: Expanded(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: 50,
+                  height: screenHeight * (50 / screenHeight),
                   child: Row(
                     children: [
                       InkWell(
@@ -34,11 +37,11 @@ class _PaymentState extends State<Payment> {
                         },
                         child: Icon(Icons.arrow_back),
                       ),
-                      SizedBox(width: 110),
+                      SizedBox(width: screenWidth * (110 / screenWidth)),
                       Text(
                         'Payment',
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: screenHeight * (15 / screenHeight),
                           fontFamily: 'Montserrat',
                           fontWeight: FontWeight.w600,
                           color: Color(0xFF1A237E),
@@ -47,88 +50,110 @@ class _PaymentState extends State<Payment> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: screenHeight * (40 / screenHeight)),
                 Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                      screenWidth * (10 / screenWidth),
+                    ),
                   ),
                   elevation: 8,
                   child: Container(
-                    height: 97,
-
+                    height: screenHeight * (97 / screenHeight),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(
+                        screenWidth * (10 / screenWidth),
+                      ),
                     ),
                     child: Center(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
-
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 22,
-                            height: 22,
-                            margin: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                width: 1,
-                                color: Color(0xFFF97891),
-                              ),
-                            ),
-                            child: Stack(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 2.5, top: 2.5),
-                                  child: Container(
-                                    width: 15,
-                                    height: 15,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFF5E49AD),
-                                      shape: BoxShape.circle,
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: screenWidth * (22 / screenWidth),
+                                height: screenWidth * (22 / screenWidth),
+                                margin: EdgeInsets.only(
+                                  left: screenWidth * (10 / screenWidth),
+                                ),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    width: 1,
+                                    color: Color(0xFFF97891),
+                                  ),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        left: screenWidth * (2.5 / screenWidth),
+                                        top: screenWidth * (2.5 / screenWidth),
+                                      ),
+                                      child: Container(
+                                        width: screenWidth * (15 / screenWidth),
+                                        height:
+                                            screenWidth * (15 / screenWidth),
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFF5E49AD),
+                                          shape: BoxShape.circle,
+                                        ),
+                                      ),
                                     ),
-                                  ),
+                                  ],
                                 ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            width: 49,
-                            height: 32,
-                            margin: EdgeInsets.only(left: 15),
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/visa@3x.png'),
                               ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(left: 12),
-                            margin: EdgeInsets.only(right: 52),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Globel',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF5D5D5D),
+                              Container(
+                                width: screenWidth * (49 / screenWidth),
+                                height: screenHeight * (32 / screenHeight),
+                                margin: EdgeInsets.only(
+                                  left: screenWidth * (15 / screenWidth),
+                                ),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/visa@3x.png'),
                                   ),
                                 ),
-                                Text(
-                                  '034XXX-00X0001',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF5D5D5D),
-                                  ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(
+                                  left: screenWidth * (12 / screenWidth),
                                 ),
-                              ],
-                            ),
+                                margin: EdgeInsets.only(
+                                  right: screenWidth * (52 / screenWidth),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Globel',
+                                      style: TextStyle(
+                                        fontSize:
+                                            screenHeight * (18 / screenHeight),
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF5D5D5D),
+                                      ),
+                                    ),
+                                    Text(
+                                      '034XXX-00X0001',
+                                      style: TextStyle(
+                                        fontSize:
+                                            screenHeight * (14 / screenHeight),
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF5D5D5D),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                           Transform.rotate(
                             angle: pi / 2,
@@ -142,74 +167,91 @@ class _PaymentState extends State<Payment> {
                     ),
                   ),
                 ),
-
-                SizedBox(height: 10),
+                SizedBox(height: screenHeight * (10 / screenHeight)),
                 Card(
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(
+                      screenWidth * (10 / screenWidth),
+                    ),
                   ),
                   elevation: 8,
                   child: Container(
-                    height: 97,
-
+                    height: screenHeight * (97 / screenHeight),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(
+                        screenWidth * (10 / screenWidth),
+                      ),
                     ),
                     child: Center(
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
-
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Container(
-                            width: 22,
-                            height: 22,
-                            margin: EdgeInsets.only(left: 10),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                width: 1,
-                                color: Color(0xFF9B9B9B),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            width: 49,
-                            height: 32,
-                            margin: EdgeInsets.only(left: 15),
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage('assets/master_card.png'),
-                              ),
-                            ),
-                          ),
-                          Container(
-                            padding: EdgeInsets.only(left: 12),
-                            margin: EdgeInsets.only(right: 52),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Fast Cash',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF5D5D5D),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: screenWidth * (22 / screenWidth),
+                                height: screenWidth * (22 / screenWidth),
+                                margin: EdgeInsets.only(
+                                  left: screenWidth * (10 / screenWidth),
+                                ),
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    width: 1,
+                                    color: Color(0xFF9B9B9B),
                                   ),
                                 ),
-                                Text(
-                                  '034XXX-00X0001',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Montserrat',
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF5D5D5D),
+                              ),
+                              Container(
+                                width: screenWidth * (49 / screenWidth),
+                                height: screenHeight * (32 / screenHeight),
+                                margin: EdgeInsets.only(
+                                  left: screenWidth * (15 / screenWidth),
+                                ),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/master_card.png'),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(
+                                  left: screenWidth * (12 / screenWidth),
+                                ),
+                                margin: EdgeInsets.only(
+                                  right: screenWidth * (52 / screenWidth),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Fast Cash',
+                                      style: TextStyle(
+                                        fontSize:
+                                            screenHeight * (18 / screenHeight),
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF5D5D5D),
+                                      ),
+                                    ),
+                                    Text(
+                                      '034XXX-00X0001',
+                                      style: TextStyle(
+                                        fontSize:
+                                            screenHeight * (14 / screenHeight),
+                                        fontFamily: 'Montserrat',
+                                        fontWeight: FontWeight.w600,
+                                        color: Color(0xFF5D5D5D),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
                           Transform.rotate(
                             angle: pi / 2,
@@ -223,7 +265,7 @@ class _PaymentState extends State<Payment> {
                     ),
                   ),
                 ),
-                SizedBox(height: 50),
+                SizedBox(height: screenHeight * (50 / screenHeight)),
                 InkWell(
                   onTap: () {
                     Navigator.push(
@@ -232,9 +274,12 @@ class _PaymentState extends State<Payment> {
                     );
                   },
                   child: Container(
-                    height: 44,
-                    width: 324,
-                    padding: EdgeInsets.only(left: 108, right: 105),
+                    height: screenHeight * (44 / screenHeight),
+                    width: screenWidth * (324 / screenWidth),
+                    padding: EdgeInsets.only(
+                      left: screenWidth * (108 / screenWidth),
+                      right: screenWidth * (105 / screenWidth),
+                    ),
                     decoration: BoxDecoration(
                       border: Border.all(width: 1, color: Color(0xFF049BDE)),
                     ),
@@ -246,7 +291,7 @@ class _PaymentState extends State<Payment> {
                           Text(
                             'Add Card',
                             style: TextStyle(
-                              fontSize: 16,
+                              fontSize: screenHeight * (16 / screenHeight),
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
                               color: Colors.black,
@@ -257,14 +302,17 @@ class _PaymentState extends State<Payment> {
                     ),
                   ),
                 ),
-                SizedBox(height: 100),
+                SizedBox(height: screenHeight * (100 / screenHeight)),
                 Container(
-                  height: 150,
-                  margin: EdgeInsets.only(left: 25, right: 25),
+                  height: screenHeight * (150 / screenHeight),
+                  margin: EdgeInsets.only(
+                    left: screenWidth * (25 / screenWidth),
+                    right: screenWidth * (25 / screenWidth),
+                  ),
                   child: Column(
                     children: [
                       Container(
-                        height: 50,
+                        height: screenHeight * (50 / screenHeight),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -279,7 +327,7 @@ class _PaymentState extends State<Payment> {
                             Text(
                               'Discount',
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: screenHeight * (13 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFF1A237E),
@@ -288,7 +336,7 @@ class _PaymentState extends State<Payment> {
                             Text(
                               'AED 26',
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: screenHeight * (13 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFFD32F2F),
@@ -298,7 +346,7 @@ class _PaymentState extends State<Payment> {
                         ),
                       ),
                       Container(
-                        height: 50,
+                        height: screenHeight * (50 / screenHeight),
                         decoration: BoxDecoration(
                           border: Border(
                             bottom: BorderSide(
@@ -313,7 +361,7 @@ class _PaymentState extends State<Payment> {
                             Text(
                               'Subtotal',
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: screenHeight * (14 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFF1A237E),
@@ -322,7 +370,7 @@ class _PaymentState extends State<Payment> {
                             Text(
                               'AED 324',
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: screenHeight * (17 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFFD32F2F),
@@ -332,15 +380,14 @@ class _PaymentState extends State<Payment> {
                         ),
                       ),
                       Container(
-                        height: 50,
-
+                        height: screenHeight * (50 / screenHeight),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Total',
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: screenHeight * (14 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFF1A237E),
@@ -349,7 +396,7 @@ class _PaymentState extends State<Payment> {
                             Text(
                               'AED 328',
                               style: TextStyle(
-                                fontSize: 17,
+                                fontSize: screenHeight * (17 / screenHeight),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0xFFD32F2F),
@@ -361,7 +408,7 @@ class _PaymentState extends State<Payment> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: screenHeight * (40 / screenHeight)),
                 InkWell(
                   onTap: () {
                     Navigator.push(
@@ -371,22 +418,29 @@ class _PaymentState extends State<Payment> {
                   },
                   child: Card(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(40),
+                      borderRadius: BorderRadius.circular(
+                        screenWidth * (40 / screenWidth),
+                      ),
                     ),
                     elevation: 4,
                     child: Container(
-                      width: 319,
-                      height: 47,
-                      padding: EdgeInsets.only(top: 12, bottom: 12),
+                      width: screenWidth * (319 / screenWidth),
+                      height: screenHeight * (47 / screenHeight),
+                      padding: EdgeInsets.only(
+                        top: screenHeight * (12 / screenHeight),
+                        bottom: screenHeight * (12 / screenHeight),
+                      ),
                       decoration: BoxDecoration(
                         color: Color(0xFF1A237E),
-                        borderRadius: BorderRadius.circular(40),
+                        borderRadius: BorderRadius.circular(
+                          screenWidth * (40 / screenWidth),
+                        ),
                       ),
                       child: Center(
                         child: Text(
                           'Place Order',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: screenHeight * (14 / screenHeight),
                             fontFamily: 'Montserrat',
                             fontWeight: FontWeight.w600,
                             color: Colors.white,
@@ -396,7 +450,7 @@ class _PaymentState extends State<Payment> {
                     ),
                   ),
                 ),
-                SizedBox(height: 30),
+                SizedBox(height: screenHeight * (30 / screenHeight)),
               ],
             ),
           ),

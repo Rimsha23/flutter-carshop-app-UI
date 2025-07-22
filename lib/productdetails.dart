@@ -11,10 +11,13 @@ class Productdetails extends StatefulWidget {
 class _ProductdetailsState extends State<Productdetails> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
-        width: 375,
-        color: Color(0xFFF8F8F8),
+        width: screenWidth,
+        color: const Color(0xFFF8F8F8),
         child: Column(
           children: [
             Expanded(
@@ -23,19 +26,19 @@ class _ProductdetailsState extends State<Productdetails> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      height: 450,
-                      width: 375,
+                      height: screenHeight * (450 / screenHeight),
+                      width: screenWidth,
                       padding: EdgeInsets.only(
-                        top: 5,
-                        bottom: 15,
-                        left: 15,
-                        right: 15,
+                        top: screenHeight * (5 / screenHeight),
+                        bottom: screenHeight * (15 / screenHeight),
+                        left: screenWidth * (15 / screenWidth),
+                        right: screenWidth * (15 / screenWidth),
                       ),
-                      decoration: BoxDecoration(color: Colors.white),
+                      decoration: const BoxDecoration(color: Colors.white),
                       child: Container(
-                        height: 430,
-                        width: 320,
-                        decoration: BoxDecoration(
+                        height: screenHeight * (430 / screenHeight),
+                        width: screenWidth * (320 / screenWidth),
+                        decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage('assets/tyres.png'),
                           ),
@@ -47,22 +50,27 @@ class _ProductdetailsState extends State<Productdetails> {
                                 Navigator.pop(context);
                               },
                               child: Container(
-                                width: 35,
-                                height: 35,
-                                margin: EdgeInsets.only(top: 10, left: 5),
-                                child: Icon(Icons.arrow_back),
+                                width: screenWidth * (35 / screenWidth),
+                                height: screenHeight * (35 / screenHeight),
+                                margin: EdgeInsets.only(
+                                  top: screenHeight * (10 / screenHeight),
+                                  left: screenWidth * (5 / screenWidth),
+                                ),
+                                child: const Icon(Icons.arrow_back),
                               ),
                             ),
                           ],
                         ),
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: screenHeight * (15 / screenHeight)),
                     Container(
-                      height: 60,
-                      width: 280,
-                      margin: EdgeInsets.only(left: 25),
-                      child: Text(
+                      height: screenHeight * (60 / screenHeight),
+                      width: screenWidth * (280 / screenWidth),
+                      margin: EdgeInsets.only(
+                        left: screenWidth * (25 / screenWidth),
+                      ),
+                      child: const Text(
                         'BF Goodrich 315/70R17 Tire, All-Terrain T/A KO2 - 08806',
                         style: TextStyle(
                           fontSize: 17,
@@ -72,12 +80,13 @@ class _ProductdetailsState extends State<Productdetails> {
                         ),
                       ),
                     ),
-
                     Container(
-                      height: 75,
-                      width: 305,
-                      margin: EdgeInsets.only(left: 20),
-                      child: Text(
+                      height: screenHeight * (75 / screenHeight),
+                      width: screenWidth * (305 / screenWidth),
+                      margin: EdgeInsets.only(
+                        left: screenWidth * (20 / screenWidth),
+                      ),
+                      child: const Text(
                         'Etiam convallis elementum sapien, a aliquam turpis aliquam vitae. Praesent sollicitudin felis vel mi facilisis posuere.  ',
                         style: TextStyle(
                           fontSize: 13,
@@ -88,10 +97,12 @@ class _ProductdetailsState extends State<Productdetails> {
                       ),
                     ),
                     Container(
-                      height: 105,
-                      width: 305,
-                      margin: EdgeInsets.only(left: 20),
-                      child: Text(
+                      height: screenHeight * (105 / screenHeight),
+                      width: screenWidth * (305 / screenWidth),
+                      margin: EdgeInsets.only(
+                        left: screenWidth * (20 / screenWidth),
+                      ),
+                      child: const Text(
                         'Size: 315/70R17 \n Side Wall: White letters on one side – Black side wall on the other side Overall \n Diameter: 34.41" \n Load Range: E Max Load: 3195 lbs Tread \n Depth: 15/32 Speed \n Rating: S Tread \n Type: All Terrain ',
                         style: TextStyle(
                           fontSize: 13,
@@ -106,17 +117,23 @@ class _ProductdetailsState extends State<Productdetails> {
               ),
             ),
             Container(
-              height: 70,
-              width: 375,
-              padding: EdgeInsets.only(left: 25, right: 25),
-              decoration: BoxDecoration(color: Colors.white),
+              height: screenHeight * (70 / screenHeight),
+              width: screenWidth,
+              padding: EdgeInsets.only(
+                left: screenWidth * (25 / screenWidth),
+                right: screenWidth * (25 / screenWidth),
+              ),
+              decoration: const BoxDecoration(color: Colors.white),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(top: 25, bottom: 25),
-                    child: Text(
+                    margin: EdgeInsets.only(
+                      top: screenHeight * (25 / screenHeight),
+                      bottom: screenHeight * (25 / screenHeight),
+                    ),
+                    child: const Text(
                       'AED 33',
                       style: TextStyle(
                         fontSize: 16,
@@ -130,17 +147,19 @@ class _ProductdetailsState extends State<Productdetails> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (builder) => Shoppingcart()),
+                        MaterialPageRoute(
+                          builder: (builder) => const Shoppingcart(),
+                        ),
                       );
                     },
                     child: Container(
-                      height: 47,
-                      width: 202,
+                      height: screenHeight * (47 / screenHeight),
+                      width: screenWidth * (202 / screenWidth),
                       decoration: BoxDecoration(
-                        color: Color(0xFF1A237E),
+                        color: const Color(0xFF1A237E),
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Buy Now',
                           style: TextStyle(

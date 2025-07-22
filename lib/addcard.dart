@@ -10,19 +10,26 @@ class Addcard extends StatefulWidget {
 class _AddcardState extends State<Addcard> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        width: 375,
-        height: 800,
-        padding: EdgeInsets.only(left: 25, right: 25),
+        width: screenWidth,
+        height: screenHeight,
+        padding: EdgeInsets.only(
+          left: screenWidth * 25 / screenWidth,
+          right: screenWidth * 25 / screenWidth,
+        ),
         color: Color(0xFFF8F8F8),
         child: Expanded(
           child: SingleChildScrollView(
             child: Column(
               children: [
                 Container(
-                  height: 50,
-                  margin: EdgeInsets.only(top: 15),
+                  height: screenHeight * 50 / screenHeight,
+                  margin: EdgeInsets.only(
+                    top: screenHeight * 15 / screenHeight,
+                  ),
                   child: Row(
                     children: [
                       InkWell(
@@ -31,7 +38,7 @@ class _AddcardState extends State<Addcard> {
                         },
                         child: Icon(Icons.arrow_back),
                       ),
-                      SizedBox(width: 110),
+                      SizedBox(width: screenWidth * 110 / screenWidth),
                       Text(
                         'Add Card',
                         style: TextStyle(
@@ -44,31 +51,31 @@ class _AddcardState extends State<Addcard> {
                     ],
                   ),
                 ),
-                SizedBox(height: 40),
+                SizedBox(height: screenHeight * 40 / screenHeight),
                 SizedBox(
-                  width: 238,
-                  height: 40,
+                  width: screenWidth * 238 / screenWidth,
+                  height: screenHeight * 40 / screenHeight,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(
-                        width: 50,
-                        height: 32,
+                        width: screenWidth * 50 / screenWidth,
+                        height: screenHeight * 32 / screenHeight,
                         child: Image.asset('assets/visa@3x.png'),
                       ),
                       SizedBox(
-                        width: 58,
-                        height: 38,
+                        width: screenWidth * 58 / screenWidth,
+                        height: screenHeight * 38 / screenHeight,
                         child: Image.asset('assets/master_card.png'),
                       ),
                       SizedBox(
-                        width: 50,
-                        height: 32,
+                        width: screenWidth * 50 / screenWidth,
+                        height: screenHeight * 32 / screenHeight,
                         child: Image.asset('assets/american@3x.png'),
                       ),
                       SizedBox(
-                        width: 50,
-                        height: 32,
+                        width: screenWidth * 50 / screenWidth,
+                        height: screenHeight * 32 / screenHeight,
                         child: Image.asset('assets/discover@3x.png'),
                       ),
                     ],

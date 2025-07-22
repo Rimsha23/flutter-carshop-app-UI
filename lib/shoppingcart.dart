@@ -11,16 +11,22 @@ class Shoppingcart extends StatefulWidget {
 class _ShoppingcartState extends State<Shoppingcart> {
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: Container(
-        width: 375,
-        height: 800,
+        width: screenWidth,
+        height: screenHeight,
         color: Color(0xFFF8F8F8),
         child: Column(
           children: [
             Container(
-              height: 80,
-              padding: EdgeInsets.only(left: 25, top: 30),
+              height: screenHeight * (80 / screenHeight),
+              padding: EdgeInsets.only(
+                left: screenWidth * (25 / screenWidth),
+                top: screenHeight * (30 / screenHeight),
+              ),
               child: Row(
                 children: [
                   InkWell(
@@ -29,11 +35,11 @@ class _ShoppingcartState extends State<Shoppingcart> {
                     },
                     child: Icon(Icons.arrow_back),
                   ),
-                  SizedBox(width: 120),
+                  SizedBox(width: screenWidth * (120 / screenWidth)),
                   Text(
                     'Cart',
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: screenWidth * (18 / screenWidth),
                       fontFamily: 'Montserrat',
                       fontWeight: FontWeight.w600,
                       color: Color(0xFF1A237E),
@@ -47,8 +53,10 @@ class _ShoppingcartState extends State<Shoppingcart> {
                 child: Column(
                   children: [
                     Container(
-                      height: 60,
-                      padding: EdgeInsets.only(left: 30, right: 30),
+                      height: screenHeight * (60 / screenHeight),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * (30 / screenWidth),
+                      ),
                       color: Colors.white,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -56,7 +64,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                           Text(
                             'PRODUCTS',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: screenWidth * (14 / screenWidth),
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
                               color: Color(0xFF1A237E),
@@ -65,7 +73,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                           Text(
                             '4 ITEMS',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: screenWidth * (14 / screenWidth),
                               fontFamily: 'Montserrat',
                               fontWeight: FontWeight.w600,
                               color: Color(0xFF1A237E),
@@ -74,22 +82,26 @@ class _ShoppingcartState extends State<Shoppingcart> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 30),
+                    SizedBox(height: screenHeight * (30 / screenHeight)),
 
                     Container(
-                      padding: EdgeInsets.only(left: 25, right: 25),
+                      padding: EdgeInsets.symmetric(
+                        horizontal: screenWidth * (25 / screenWidth),
+                      ),
                       child: ListView.builder(
                         physics: NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemCount: 4,
                         itemBuilder: (context, index) {
                           return SizedBox(
-                            height: 160,
+                            height: screenHeight * (160 / screenHeight),
                             child: Column(
                               children: [
                                 Container(
-                                  height: 145,
-                                  padding: EdgeInsets.only(bottom: 15),
+                                  height: screenHeight * (145 / screenHeight),
+                                  padding: EdgeInsets.only(
+                                    bottom: screenHeight * (15 / screenHeight),
+                                  ),
                                   decoration: BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
@@ -103,12 +115,14 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       SizedBox(
-                                        width: 130,
-                                        height: 130,
+                                        width:
+                                            screenWidth * (130 / screenWidth),
+                                        height:
+                                            screenWidth * (130 / screenWidth),
                                         child: Image.asset('assets/tyres.png'),
                                       ),
                                       SizedBox(
-                                        width: 95,
+                                        width: screenWidth * (95 / screenWidth),
                                         child: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -118,7 +132,9 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                             Text(
                                               'BF Goodrich 315/70R17 ',
                                               style: TextStyle(
-                                                fontSize: 14,
+                                                fontSize:
+                                                    screenWidth *
+                                                    (14 / screenWidth),
                                                 fontFamily: 'Montserrat',
                                                 fontWeight: FontWeight.w600,
                                                 color: Color(0xFF1A237E),
@@ -127,17 +143,25 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                             Text(
                                               'AED 41 ',
                                               style: TextStyle(
-                                                fontSize: 17,
+                                                fontSize:
+                                                    screenWidth *
+                                                    (17 / screenWidth),
                                                 fontFamily: 'Montserrat',
                                                 fontWeight: FontWeight.w600,
                                                 color: Color(0xFFD32F2F),
                                               ),
                                             ),
-                                            SizedBox(height: 15),
+                                            SizedBox(
+                                              height:
+                                                  screenHeight *
+                                                  (15 / screenHeight),
+                                            ),
                                             Text(
                                               'Delete ',
                                               style: TextStyle(
-                                                fontSize: 14,
+                                                fontSize:
+                                                    screenWidth *
+                                                    (14 / screenWidth),
                                                 fontFamily: 'Montserrat',
                                                 fontWeight: FontWeight.w600,
                                                 color: Color(0xFF1A237E),
@@ -147,14 +171,18 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 35,
+                                        width: screenWidth * (35 / screenWidth),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                              width: 32,
-                                              height: 32,
+                                              width:
+                                                  screenWidth *
+                                                  (32 / screenWidth),
+                                              height:
+                                                  screenWidth *
+                                                  (32 / screenWidth),
                                               decoration: BoxDecoration(
                                                 color: Color(0x405E7FB1),
                                                 borderRadius:
@@ -170,16 +198,21 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                             Text(
                                               '3',
                                               style: TextStyle(
-                                                fontSize: 18,
+                                                fontSize:
+                                                    screenWidth *
+                                                    (18 / screenWidth),
                                                 fontFamily: 'Montserrat',
                                                 fontWeight: FontWeight.w600,
                                                 color: Color(0xFF1A237E),
                                               ),
                                             ),
                                             Container(
-                                              width: 32,
-                                              height: 32,
-
+                                              width:
+                                                  screenWidth *
+                                                  (32 / screenWidth),
+                                              height:
+                                                  screenWidth *
+                                                  (32 / screenWidth),
                                               decoration: BoxDecoration(
                                                 color: Color(0x405E7FB1),
                                                 borderRadius:
@@ -188,7 +221,6 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                               child: Center(
                                                 child: Icon(
                                                   Icons.remove,
-
                                                   color: Colors.white,
                                                 ),
                                               ),
@@ -199,27 +231,32 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                     ],
                                   ),
                                 ),
-                                SizedBox(height: 15),
+                                SizedBox(
+                                  height: screenHeight * (15 / screenHeight),
+                                ),
                               ],
                             ),
                           );
                         },
                       ),
                     ),
-                    SizedBox(height: 15),
+                    SizedBox(height: screenHeight * (15 / screenHeight)),
                     Container(
-                      height: 47,
-                      padding: EdgeInsets.only(left: 25, right: 20),
+                      height: screenHeight * (47 / screenHeight),
+                      padding: EdgeInsets.only(
+                        left: screenWidth * (25 / screenWidth),
+                        right: screenWidth * (20 / screenWidth),
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            width: 210,
-                            height: 47,
+                            width: screenWidth * (210 / screenWidth),
+                            height: screenHeight * (47 / screenHeight),
                             padding: EdgeInsets.only(
-                              left: 20,
-                              top: 15,
-                              bottom: 15,
+                              left: screenWidth * (20 / screenWidth),
+                              top: screenHeight * (15 / screenHeight),
+                              bottom: screenHeight * (15 / screenHeight),
                             ),
                             decoration: BoxDecoration(
                               color: Colors.white,
@@ -232,7 +269,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                             child: Text(
                               'Coupon Number',
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: screenWidth * (13 / screenWidth),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Color(0x80222222),
@@ -240,9 +277,8 @@ class _ShoppingcartState extends State<Shoppingcart> {
                             ),
                           ),
                           Container(
-                            width: 100,
-                            height: 47,
-
+                            width: screenWidth * (100 / screenWidth),
+                            height: screenHeight * (47 / screenHeight),
                             decoration: BoxDecoration(
                               color: Color(0xFF1A237E),
                               border: Border.all(
@@ -255,7 +291,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                               child: Text(
                                 'Apply',
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: screenWidth * (14 / screenWidth),
                                   fontFamily: 'Montserrat',
                                   fontWeight: FontWeight.w500,
                                   color: Colors.white,
@@ -267,8 +303,10 @@ class _ShoppingcartState extends State<Shoppingcart> {
                       ),
                     ),
                     Container(
-                      height: 30,
-                      margin: EdgeInsets.only(left: 25, right: 25),
+                      height: screenHeight * (30 / screenHeight),
+                      margin: EdgeInsets.symmetric(
+                        horizontal: screenWidth * (25 / screenWidth),
+                      ),
                       decoration: BoxDecoration(
                         border: Border(
                           bottom: BorderSide(
@@ -279,12 +317,14 @@ class _ShoppingcartState extends State<Shoppingcart> {
                       ),
                     ),
                     Container(
-                      height: 100,
-                      margin: EdgeInsets.only(left: 25, right: 25),
+                      height: screenHeight * (100 / screenHeight),
+                      margin: EdgeInsets.symmetric(
+                        horizontal: screenWidth * (25 / screenWidth),
+                      ),
                       child: Column(
                         children: [
                           Container(
-                            height: 50,
+                            height: screenHeight * (50 / screenHeight),
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
@@ -299,7 +339,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                 Text(
                                   'Discount',
                                   style: TextStyle(
-                                    fontSize: 13,
+                                    fontSize: screenWidth * (13 / screenWidth),
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xFF1A237E),
@@ -308,7 +348,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                 Text(
                                   'AED 26',
                                   style: TextStyle(
-                                    fontSize: 13,
+                                    fontSize: screenWidth * (13 / screenWidth),
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xFFD32F2F),
@@ -318,7 +358,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                             ),
                           ),
                           Container(
-                            height: 50,
+                            height: screenHeight * (50 / screenHeight),
                             decoration: BoxDecoration(
                               border: Border(
                                 bottom: BorderSide(
@@ -333,7 +373,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                 Text(
                                   'Subtotal',
                                   style: TextStyle(
-                                    fontSize: 14,
+                                    fontSize: screenWidth * (14 / screenWidth),
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xFF1A237E),
@@ -342,7 +382,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                                 Text(
                                   'AED 324',
                                   style: TextStyle(
-                                    fontSize: 17,
+                                    fontSize: screenWidth * (17 / screenWidth),
                                     fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.w600,
                                     color: Color(0xFFD32F2F),
@@ -354,7 +394,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 35),
+                    SizedBox(height: screenHeight * (35 / screenHeight)),
                     InkWell(
                       onTap: () {
                         Navigator.push(
@@ -368,9 +408,12 @@ class _ShoppingcartState extends State<Shoppingcart> {
                         ),
                         elevation: 4,
                         child: Container(
-                          width: 320,
-                          height: 47,
-                          padding: EdgeInsets.only(top: 12, bottom: 12),
+                          width: screenWidth * (320 / screenWidth),
+                          height: screenHeight * (47 / screenHeight),
+                          padding: EdgeInsets.only(
+                            top: screenHeight * (12 / screenHeight),
+                            bottom: screenHeight * (12 / screenHeight),
+                          ),
                           decoration: BoxDecoration(
                             color: Color(0xFF1A237E),
                             borderRadius: BorderRadius.circular(40),
@@ -379,7 +422,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                             child: Text(
                               'Checkout',
                               style: TextStyle(
-                                fontSize: 14,
+                                fontSize: screenWidth * (14 / screenWidth),
                                 fontFamily: 'Montserrat',
                                 fontWeight: FontWeight.w600,
                                 color: Colors.white,
@@ -389,7 +432,7 @@ class _ShoppingcartState extends State<Shoppingcart> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 35),
+                    SizedBox(height: screenHeight * (35 / screenHeight)),
                   ],
                 ),
               ),
