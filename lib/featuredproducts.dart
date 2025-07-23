@@ -33,183 +33,198 @@ class _FeaturedproductsState extends State<Featuredproducts> {
         'price': 'AED 34',
       },
     ];
-
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        height: 812,
-        width: 375,
+        height: screenHeight,
+        width: screenWidth,
         color: Color(0xFFF8F8F8),
-        child: Column(
-          children: [
-            Container(
-              height: 300,
-              width: 375,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: screenHeight * 300 / screenHeight,
+                width: screenWidth,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(15),
+                    bottomRight: Radius.circular(15),
+                  ),
+                  image: DecorationImage(
+                    image: AssetImage('assets/featured.png'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                image: DecorationImage(
-                  image: AssetImage('assets/featured.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Stack(
-                children: [
-                  Container(
-                    height: 35,
-                    width: 35,
-                    margin: EdgeInsets.only(top: 20, left: 15),
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Icon(Icons.arrow_back, color: Colors.white),
-                    ),
-                  ),
-                  Container(
-                    height: 35,
-                    width: 250,
-                    margin: EdgeInsets.only(top: 230, left: 80),
-                    child: Text(
-                      'Featured Products',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'Montserrat',
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
+                child: Stack(
+                  children: [
+                    Container(
+                      height: screenHeight * 35 / screenHeight,
+                      width: screenWidth * 35 / screenWidth,
+                      margin: EdgeInsets.only(
+                        top: screenHeight * 20 / screenHeight,
+                        left: screenWidth * 15 / screenWidth,
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 30,
-              width: 375,
-              margin: EdgeInsets.only(top: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border(
-                        bottom: BorderSide(width: 2, color: Color(0xFFD32F2F)),
-                      ),
-                    ),
-                    child: Text(
-                      'Honda',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Montserrat',
-                        color: Color(0xFF1A237E),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    child: Text(
-                      'Audi',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Montserrat',
-                        color: Color(0x401A227D),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    child: Text(
-                      'Mercedes',
-                      style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                        fontFamily: 'Montserrat',
-                        color: Color(0x401A227D),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 275,
-              padding: EdgeInsets.only(left: 20, right: 50),
-              margin: EdgeInsets.only(top: 15),
-              child: Expanded(
-                child: ListView.builder(
-                  itemCount: featuredProducts.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      height: 110,
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (builder) => Productdetails(),
-                            ),
-                          );
+                          Navigator.pop(context);
                         },
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 97,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Container(
-                                    width: 97,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                    child: Image.asset(
-                                      featuredProducts[index]['imageUrl']!,
-                                    ),
-                                  ),
-                                  Container(
-                                    width: 150,
-                                    height: 97,
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          featuredProducts[index]['part']!,
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            fontWeight: FontWeight.w600,
-                                            fontFamily: 'Montserrat',
-                                            color: Color(0xFF1A237E),
-                                          ),
-                                        ),
-                                        Text(
-                                          featuredProducts[index]['price']!,
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w600,
-                                            fontFamily: 'Montserrat',
-                                            color: Color(0xFFD32F2F),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
+                        child: Icon(Icons.arrow_back, color: Colors.white),
+                      ),
+                    ),
+                    Center(
+                      child: Container(
+                        height: screenHeight * 35 / screenHeight,
+                        width: screenWidth * 250 / screenWidth,
+                        margin: EdgeInsets.only(
+                          top: screenHeight * 230 / screenHeight,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Featured Products',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: 'Montserrat',
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500,
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    );
-                  },
+                    ),
+                  ],
                 ),
               ),
-            ),
-          ],
+              Container(
+                height: screenHeight * 30 / screenHeight,
+                width: screenWidth,
+                margin: EdgeInsets.only(top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 2,
+                            color: Color(0xFFD32F2F),
+                          ),
+                        ),
+                      ),
+                      child: Text(
+                        'Honda',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Montserrat',
+                          color: Color(0xFF1A237E),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      child: Text(
+                        'Audi',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Montserrat',
+                          color: Color(0x401A227D),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      child: Text(
+                        'Mercedes',
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          fontFamily: 'Montserrat',
+                          color: Color(0x401A227D),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 275,
+                padding: EdgeInsets.only(left: 20, right: 50),
+                margin: EdgeInsets.only(top: 15),
+                child: Expanded(
+                  child: ListView.builder(
+                    itemCount: featuredProducts.length,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        height: 110,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (builder) => Productdetails(),
+                              ),
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 97,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    Container(
+                                      width: 97,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(5),
+                                      ),
+                                      child: Image.asset(
+                                        featuredProducts[index]['imageUrl']!,
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 150,
+                                      height: 97,
+                                      child: Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            featuredProducts[index]['part']!,
+                                            style: TextStyle(
+                                              fontSize: 13,
+                                              fontWeight: FontWeight.w600,
+                                              fontFamily: 'Montserrat',
+                                              color: Color(0xFF1A237E),
+                                            ),
+                                          ),
+                                          Text(
+                                            featuredProducts[index]['price']!,
+                                            style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w600,
+                                              fontFamily: 'Montserrat',
+                                              color: Color(0xFFD32F2F),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
