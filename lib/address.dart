@@ -24,7 +24,7 @@ class _AddressState extends State<Address> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: screenHeight * (50 / screenHeight),
                 child: Row(
                   children: [

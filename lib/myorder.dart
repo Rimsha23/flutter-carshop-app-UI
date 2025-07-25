@@ -87,7 +87,7 @@ class _MyorderState extends State<Myorder> {
               margin: EdgeInsets.only(top: 15),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 97,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -99,7 +99,7 @@ class _MyorderState extends State<Myorder> {
                           ),
                           child: Image.asset('assets/tyres.png'),
                         ),
-                        Container(
+                        SizedBox(
                           width: 150,
                           height: 97,
                           child: Column(

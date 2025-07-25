@@ -61,7 +61,7 @@ class _NotificationsState extends State<Notifications> {
 
                       child: Column(
                         children: [
-                          Container(
+                          SizedBox(
                             height: screenHeight * 74 / screenHeight,
                             width: screenWidth,
 
@@ -145,7 +145,7 @@ class _NotificationsState extends State<Notifications> {
                             ),
                           ),
                           SizedBox(height: screenHeight * 10 / screenHeight),
-                          Container(
+                          SizedBox(
                             height: screenHeight * 74 / screenHeight,
                             width: screenWidth,
 

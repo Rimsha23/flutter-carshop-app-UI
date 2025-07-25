@@ -154,7 +154,7 @@ class _FeaturedproductsState extends State<Featuredproducts> {
                   child: ListView.builder(
                     itemCount: featuredProducts.length,
                     itemBuilder: (context, index) {
-                      return Container(
+                      return SizedBox(
                         height: 110,
                         child: InkWell(
                           onTap: () {
@@ -167,7 +167,7 @@ class _FeaturedproductsState extends State<Featuredproducts> {
                           },
                           child: Column(
                             children: [
-                              Container(
+                              SizedBox(
                                 height: 97,
                                 child: Row(
                                   mainAxisAlignment:
@@ -182,7 +182,7 @@ class _FeaturedproductsState extends State<Featuredproducts> {
                                         featuredProducts[index]['imageUrl']!,
                                       ),
                                     ),
-                                    Container(
+                                    SizedBox(
                                       width: 150,
                                       height: 97,
                                       child: Column(

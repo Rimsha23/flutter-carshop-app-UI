@@ -52,7 +52,7 @@ class _SettingsState extends State<Settings> {
               padding: EdgeInsets.only(left: 30, right: 30),
               child: Column(
                 children: [
-                  Container(
+                  SizedBox(
                     height: 20,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

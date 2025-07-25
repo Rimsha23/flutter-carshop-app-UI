@@ -27,7 +27,7 @@ class _PaymentState extends State<Payment> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Container(
+                SizedBox(
                   height: screenHeight * (50 / screenHeight),
                   child: Row(
                     children: [
@@ -379,7 +379,7 @@ class _PaymentState extends State<Payment> {
                           ],
                         ),
                       ),
-                      Container(
+                      SizedBox(
                         height: screenHeight * (50 / screenHeight),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
